@@ -10,9 +10,9 @@ Companion Lean 4 development for the CBS paper series:
 
 | File | Scope |
 |---|---|
-| `CbsLean/Basic.lean` | Core definitions: cumulative shell count, level-window inversion bounds |
-| `CbsLean/Rigidity.lean` | Rigidity / uniqueness results (monotone class), main-term–remainder sandwich, asymptotic equivalent |
-| `CbsLean/VWNumerator.lean` | VW numerator theory |
+| `CbsLean/Basic.lean` | Template stub only (`def hello := "world"`); no CBS content |
+| `CbsLean/Rigidity.lean` | All CBS baseline-paper content: shell counts and cumulative counts (`coffeeBeanShell`, `coffeeBeanCumulative`, `coffeeBeanCumulative_closedForm`), level-window inversion bounds (`coffeeBeanLevelWindow_realRootBounds`), equal-cost / weighted-gap rigidity in the monotone class, main-term–remainder sandwich (`coffeeBeanMinCost_normalized_squeeze`), and the final asymptotic equivalent (`coffeeBeanMinCost_isEquivalent`) |
+| `CbsLean/VWNumerator.lean` | VW-CBS numerator theory: mixed-radix digit box (`digitBox`), the division-free ceiling recurrence (`ceilScaled`, `mixedRadixStep`, `mixedRadixAux`), and weighted digit sums — supports the VW-CBS paper, not the baseline paper |
 
 All results compile with **zero `sorry`** and no additional axioms.
 
@@ -28,7 +28,20 @@ Last verified full build: 2026-08-24 (8030 jobs, success; linter warnings only).
 
 ## Relation to the papers
 
-The baseline paper's Theorem 3 proof chain (exact cumulative shell count →
+The baseline paper's **Theorem 4** proof chain (exact cumulative shell count →
 level-window inversion bounds → main-term/remainder sandwich → final
-asymptotic equivalent) is formalized here; the papers cite this repository
-as the "companion Lean 4 development".
+asymptotic equivalent) is formalized here, as the four theorems
+
+| Paper step | Lean theorem |
+|---|---|
+| exact cumulative shell count | `coffeeBeanCumulative_closedForm` |
+| level-window inversion bounds | `coffeeBeanLevelWindow_realRootBounds` |
+| main-term/remainder sandwich | `coffeeBeanMinCost_normalized_squeeze` |
+| final asymptotic equivalent (Theorem 4) | `coffeeBeanMinCost_isEquivalent` |
+
+all in `CbsLean/Rigidity.lean`. The papers cite this repository as the
+"companion Lean 4 development".
+
+Scope note: the formalization covers the asymptotic analysis of the
+closed-form cost (the Theorem 4 chain). It does **not** formalize the
+finite-n optimality claim of Theorem 2.
