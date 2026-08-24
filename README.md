@@ -6,7 +6,8 @@ Companion Lean 4 development for the CBS paper series:
   [doi:10.5281/zenodo.22071069](https://doi.org/10.5281/zenodo.22071069))
 - *CBS Monotonicity and Magic Numbers* (memory paper:
   [doi:10.5281/zenodo.22071007](https://doi.org/10.5281/zenodo.22071007))
-- *VW-CBS* (manuscript in preparation)
+- *VW-CBS* (preprint:
+  [doi:10.5281/zenodo.22074703](https://doi.org/10.5281/zenodo.22074703))
 
 This repository is archived at
 [doi:10.5281/zenodo.22070763](https://doi.org/10.5281/zenodo.22070763).
