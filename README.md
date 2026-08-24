@@ -2,9 +2,14 @@
 
 Companion Lean 4 development for the CBS paper series:
 
-- *The Coffee Bean Problem* (baseline paper, submitted to EJC)
-- *CBS Monotonicity and Magic Numbers* (memory paper, arXiv cs.DC)
-- *VW-CBS* (Eur. J. Comb.)
+- *The Coffee Bean Problem* (baseline paper, preprint:
+  [doi:10.5281/zenodo.22071069](https://doi.org/10.5281/zenodo.22071069))
+- *CBS Monotonicity and Magic Numbers* (memory paper:
+  [doi:10.5281/zenodo.22071007](https://doi.org/10.5281/zenodo.22071007))
+- *VW-CBS* (manuscript in preparation)
+
+This repository is archived at
+[doi:10.5281/zenodo.22070763](https://doi.org/10.5281/zenodo.22070763).
 
 ## Contents
 
