@@ -58,7 +58,6 @@ theorem indexLift_eq_of_mul_add_eq
         (sourceWidth := sourceWidth)
         (targetWidth := targetWidth)
         (x := x) hsource
-    rw [Nat.mul_add, heq] at hmul
     omega
 
 /--
@@ -77,7 +76,7 @@ theorem exists_negativeOneLiftWitness
     Nat.exists_mul_mod_eq_of_coprime
       (r := sourceWidth - 1)
       hcoprime.symm
-      (Nat.ne_of_gt hsource)
+      (by omega : sourceWidth ≠ 0)
   have hpredlt : sourceWidth - 1 < sourceWidth := by omega
   have hxmodeq :
       targetWidth * x ≡ sourceWidth - 1 [MOD sourceWidth] := by
@@ -145,7 +144,11 @@ theorem mem_twoGeneratorSemigroup_of_globallyExactInsertion_of_coprime
       middleWidth * x + j ≡ 0 [MOD sourceWidth] := by
     have hsum := hproduct.add_right j
     have hcollapse : (sourceWidth - 1) * j + j = sourceWidth * j := by
-      rw [← one_mul j, ← Nat.add_mul, Nat.sub_add_cancel (by omega)]
+      calc
+        (sourceWidth - 1) * j + j =
+            ((sourceWidth - 1) + 1) * j := by ring
+        _ = sourceWidth * j := by
+          rw [Nat.sub_add_cancel (by omega)]
     have hmultiple : sourceWidth * j ≡ 0 [MOD sourceWidth] :=
       (Nat.dvd_mul_right sourceWidth j).modEq_zero_nat
     rw [hcollapse] at hsum
