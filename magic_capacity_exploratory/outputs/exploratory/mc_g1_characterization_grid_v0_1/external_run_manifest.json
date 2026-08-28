@@ -1,0 +1,46 @@
+{
+  "run_id": "mc_g1_characterization_grid_v0_1_standard",
+  "generated_at": "2026-08-28",
+  "evidence_class": "exploratory_exact_integer_computation",
+  "seed": null,
+  "repository": "ycmath/cbs-lean",
+  "frozen_g0_parent": "b066671d9f4fd984b5e8b116b9a60e9d479c104f",
+  "g1_branch": "research/magic-capacity-g1-characterization-v0.1-20260828",
+  "config_sha256": "4b434b981dcfe31b50f0c6261159f5b9ebc682e0072f6d19d3af2edd4cb5da8c",
+  "all_residue_calibration": {
+    "p_max": 64,
+    "q_max": 64,
+    "h_max": 512,
+    "triple_count": 2097152,
+    "all_source_residues_checked": true,
+    "mismatch_count": 0,
+    "largest_observed_defect": 63
+  },
+  "critical_witness_scan": {
+    "p_max": 128,
+    "q_max": 128,
+    "h_max": 4096,
+    "triple_count": 67108864,
+    "mismatch_count": 0,
+    "largest_observed_witness_defect": 127
+  },
+  "magic_locus": {
+    "L_max": 10000,
+    "row_count": 300030,
+    "width_triple_count": 6,
+    "shell_k_values": [2, 3, 4, 8, 16]
+  },
+  "artifact_sha256": {
+    "notebook": "0427366d5d92ea4db845c8b904a76d64608bedf5b3ae3e8326950476931d2ff3",
+    "colab_package": "c79b5fc37dd80360b154d5fa021f21b620281de85f7d92581521598d5b004631",
+    "local_standard_result_zip": "432f7ce8b4ed110146573d5418976cc5a974d22b7cf43e02af52a94868988eac"
+  },
+  "verdict": "EXPLORATORY_NO_COUNTEREXAMPLE_IN_FROZEN_GRIDS",
+  "not_claimed": [
+    "hardware confirmatory evidence",
+    "novelty or priority",
+    "asymptotic magic-locus density",
+    "filtered-matrix preservation",
+    "runtime cost advantage"
+  ]
+}
