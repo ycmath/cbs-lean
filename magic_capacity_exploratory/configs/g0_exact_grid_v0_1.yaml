@@ -1,0 +1,25 @@
+run_id: mc_g0_exact_grid_v0_1
+status: frozen_for_future_g1_execution
+created_at: 2026-08-28T20:00:00+09:00
+source:
+  repository: ycmath/cbs-lean
+  base_commit: 5234bcec614df2c5658c706ede4705001c774daa
+  branch: research/magic-capacity-g0-v0.1-20260828
+scope:
+  source_width: [2, 64]
+  middle_width: [1, 64]
+  target_width: [1, 64]
+  residue_rule: x_in_0_to_source_width_minus_1
+  shell_k: [2, 16]
+  shell_level: [0, 4095]
+randomness:
+  seed: null
+  reason: exhaustive_integer_grid
+outputs:
+  root: magic_capacity_exploratory/outputs/exploratory/mc_g0_exact_grid_v0_1
+  exact_triples_csv: exact_triples.csv
+  nonexact_triples_csv: nonexact_triples.csv
+  magic_locus_csv: magic_locus.csv
+  summary_json: summary.json
+claim_class: exploratory_only
+execution_authority: not_granted_until_g0_ci_pass
