@@ -5,3 +5,4 @@ import CbsLean.MagicCapacity
 import CbsLean.MagicCapacitySemigroup
 import CbsLean.MagicCapacityCharacterization
 import CbsLean.MagicCapacityCharacterizationGeneral
+import CbsLean.MagicCapacityLocal
