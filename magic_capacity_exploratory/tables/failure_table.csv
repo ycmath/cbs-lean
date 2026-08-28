@@ -1,1 +1,2 @@
 candidate_id,stage,source_width,middle_width,target_width,shell_k,shell_level,failure_mode,metric,mechanism,residual_structure,next_candidate,status
+mc_g0_local_toolchain,operations,,,,,,local_clone_and_build_unavailable,clone_exit_nonzero,outbound_DNS_unavailable_and_no_local_Lean,GitHub_Actions_compiler_path,run_existing_Lean_Action_CI,RESOLVED
