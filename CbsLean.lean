@@ -3,3 +3,4 @@ import CbsLean.Rigidity
 import CbsLean.VWNumerator
 import CbsLean.MagicCapacity
 import CbsLean.MagicCapacitySemigroup
+import CbsLean.MagicCapacityCharacterization
