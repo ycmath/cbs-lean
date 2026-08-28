@@ -1,0 +1,30 @@
+{
+  "criterion_grid": {
+    "p_max": 64,
+    "h_max": 128,
+    "q_max": 64,
+    "triples": 524288,
+    "mismatches": 0,
+    "first_mismatch": [0,0,0,0,0,0,0],
+    "max_defect": 63
+  },
+  "scaling_grid": {
+    "p_max": 32,
+    "h_max": 64,
+    "q_max": 32,
+    "scales": [2,3,5],
+    "mismatches": 0,
+    "first_mismatch": [0,0,0,0]
+  },
+  "representative_period_rows": 30,
+  "kwong_period_audit": {
+    "modulus_min": 2,
+    "modulus_max": 64,
+    "lower_index_min": 1,
+    "lower_index_max": 32,
+    "pairs": 2016,
+    "mismatches": 0
+  },
+  "seed": null,
+  "evidence_class": "exploratory_exact_integer_computation"
+}
