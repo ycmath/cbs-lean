@@ -1,0 +1,19 @@
+{
+  "branch": "research/magic-capacity-g2p5-bridge-first-v0.1-20260829",
+  "evidence_class": "exploratory_system_toy_and_exact_integer_computation",
+  "package_filename": "MagicCapacity_G2P5_Bridge_First_v0_1.zip",
+  "package_sha256": "70228a28a797ccd677c5d3bed3a26fddabc7cb5a807732486f8c45703809403a",
+  "package_size_bytes": 6547101,
+  "parent_commit": "999765c273b33ad4bdd1b00177268be63c0c85b1",
+  "raw_outputs_committed": false,
+  "raw_outputs_in_external_package": true,
+  "run_id": "mc_g2p5_bridge_first_v0_1",
+  "scope_exclusions": [
+    "not production hardware evidence",
+    "not a full SDF equivalence theorem",
+    "not cache/DRAM/NoC/energy benchmark",
+    "not novelty determination"
+  ],
+  "seed": 20260829,
+  "summary_outputs_committed": true
+}

@@ -1,0 +1,46 @@
+{
+  "branch": "research/magic-capacity-g2p5-bridge-first-v0.1-20260829",
+  "contract": "MC_G2P5_BRIDGE_FIRST_CONTRACT_v0_1.md",
+  "elapsed_seconds": 38.796467947,
+  "evidence_class": "exploratory_system_toy_and_exact_integer_computation",
+  "failure_table": "failure_table_v0_1.csv",
+  "full_raw_outputs_in_package": true,
+  "lifting_instances": 128,
+  "max_plus_rows": 139264,
+  "outputs": [
+    "lifting_gauge_instance_rows.csv",
+    "lifting_gauge_summary.csv",
+    "max_plus_toy_rows.csv",
+    "max_plus_toy_summary.csv",
+    "path_absorption_summary.csv",
+    "path_absorption_witnesses.csv",
+    "path_global_endpoint_exact_witnesses.csv",
+    "transition_scheduler_budget_summary.csv",
+    "transition_scheduler_cost_winners.csv",
+    "transition_scheduler_policy_rows.csv",
+    "transition_scheduler_representatives.csv"
+  ],
+  "parent_commit": "999765c273b33ad4bdd1b00177268be63c0c85b1",
+  "path_absorption_summary_rows": 8,
+  "report": "MC_G2P5_BRIDGE_FIRST_REPORT_v0_1.md",
+  "run_id": "mc_g2p5_bridge_first_v0_1",
+  "scheduler_policy_rows": 325686,
+  "scope_exclusions": [
+    "not production hardware evidence",
+    "not a full SDF semantics theorem",
+    "not a cache/DRAM/NoC benchmark",
+    "not a novelty determination"
+  ],
+  "seed": 20260829,
+  "summary_outputs": [
+    "path_absorption_summary.csv",
+    "transition_scheduler_fixed_policy_summary.csv",
+    "transition_scheduler_regime_summary.csv",
+    "transition_scheduler_cost_winners.csv",
+    "max_plus_toy_summary.csv",
+    "max_plus_toy_by_defect_class.csv",
+    "lifting_gauge_summary.csv",
+    "boundary_baseline_summary.csv",
+    "boundary_matched_density_summary.csv"
+  ]
+}
