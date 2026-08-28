@@ -1,0 +1,3 @@
+candidate_id,stage,failure_mechanism,scope,repair,status
+g2p5_maxplus_r1,system_toy,Initial inserted-path recurrence allowed a valid target event to complete before the direct canonical source dependency.,Timing toy only; arithmetic and matrix results unaffected.,Added canonical source-readiness guard to every valid inserted target event and reran the complete max-plus grid.,RESOLVED
+g2p5_baseline_r1,baseline_design,Initial affine comparison did not control for CBS's different admissible density.,"Affine result retained, but not treated as a matched-density test.",Added the exact ideal-spacing lower bound with the same period and admissible count as each CBS orbit.,RESOLVED

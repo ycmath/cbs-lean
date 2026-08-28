@@ -1,0 +1,38 @@
+{
+  "evidence_class": "exploratory_system_toy_and_exact_integer_computation",
+  "lifting_gauge_toy": {
+    "candidate_lifting_depth": 2,
+    "generator_coefficients": [-1, 1],
+    "input_dim": 8,
+    "output_dim": 8,
+    "random_instances": 64,
+    "rank": 4,
+    "seed": 20260829,
+    "structured_instances": 64
+  },
+  "max_plus_toy": {
+    "middle_service_times": [0.25, 0.5, 1.0, 2.0],
+    "source_period": 1.0,
+    "target_service_time": 1.0,
+    "width_max": 16
+  },
+  "output_root": "/mnt/data/magic_capacity_g2p5_bridge_v0_1",
+  "path_absorption": {
+    "length4_width_max": 16,
+    "length5_width_max": 10,
+    "source_residues": "0..w0-1"
+  },
+  "run_id": "mc_g2p5_bridge_first_v0_1",
+  "seed": 20260829,
+  "transition_scheduler": {
+    "budgets": [0, 1, 2, "immediate"],
+    "cost_ratios_wait_over_defect": [0.1, 0.25, 0.5, 1.0, 2.0, 4.0, 10.0],
+    "h_max": 48,
+    "h_min": 1,
+    "k_values": [2, 3, 4, 5, 8, 16],
+    "p_max": 24,
+    "p_min": 2,
+    "q_max": 24,
+    "q_min": 1
+  }
+}
