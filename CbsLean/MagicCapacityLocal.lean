@@ -17,6 +17,12 @@ def IsLocalMagic
     (sourceWidth middleWidth targetWidth x : ℕ) : Prop :=
   insertionDefect sourceWidth middleWidth targetWidth x = 0
 
+instance instDecidableIsLocalMagic
+    (sourceWidth middleWidth targetWidth x : ℕ) :
+    Decidable (IsLocalMagic sourceWidth middleWidth targetWidth x) := by
+  unfold IsLocalMagic
+  infer_instance
+
 /--
 Local exactness is equivalent to one capacity inequality.  The direct lift is
 always no larger than the lift through the inserted middle width, so equality
