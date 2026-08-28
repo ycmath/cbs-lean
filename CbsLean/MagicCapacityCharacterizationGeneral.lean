@@ -156,7 +156,7 @@ theorem endpointGcd_dvd_middle_of_globallyExactInsertion
         _ ≤ middleWidth * q := houter
         _ = q * middleWidth := by ring
     exact Nat.le_of_mul_le_mul_left hscaled hq
-  exact ⟨y, (Nat.le_antisymm hle hge).symm⟩
+  exact ⟨y, by simpa [d] using (Nat.le_antisymm hle hge).symm⟩
 
 /-- Dividing two positive endpoints by their gcd gives a coprime pair. -/
 theorem coprime_endpointQuotients
