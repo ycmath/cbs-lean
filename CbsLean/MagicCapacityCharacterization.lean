@@ -51,6 +51,10 @@ theorem indexLift_eq_of_mul_add_eq
     have hsucc : indexLift sourceWidth targetWidth x + 1 ≤ y :=
       Nat.succ_le_iff.mpr hlt
     have hmul := Nat.mul_le_mul_left sourceWidth hsucc
+    have hmul' :
+        sourceWidth * indexLift sourceWidth targetWidth x + sourceWidth ≤
+          sourceWidth * y := by
+      simpa [Nat.mul_add] using hmul
     have hspec :
         targetWidth * x ≤
           sourceWidth * indexLift sourceWidth targetWidth x :=
@@ -128,7 +132,6 @@ theorem mem_twoGeneratorSemigroup_of_globallyExactInsertion_of_coprime
   obtain ⟨j, hjlt, hjmodeq⟩ :=
     exists_targetResidueWitness
       (middleWidth := middleWidth) hcoprime hsource
-
   have hproduct :
       middleWidth * x ≡ (sourceWidth - 1) * j [MOD sourceWidth] := by
     have hleft :
@@ -139,7 +142,6 @@ theorem mem_twoGeneratorSemigroup_of_globallyExactInsertion_of_coprime
       simpa [Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm] using
         hxmodeq.mul_right j
     exact hleft.trans hright
-
   have hresidualZero :
       middleWidth * x + j ≡ 0 [MOD sourceWidth] := by
     have hsum := hproduct.add_right j
@@ -153,22 +155,18 @@ theorem mem_twoGeneratorSemigroup_of_globallyExactInsertion_of_coprime
       (Nat.dvd_mul_right sourceWidth j).modEq_zero_nat
     rw [hcollapse] at hsum
     exact hsum.trans hmultiple
-
   obtain ⟨y, hy⟩ :=
     Nat.modEq_zero_iff_dvd.mp hresidualZero
-
   have hliftTarget : indexLift sourceWidth targetWidth x = z :=
     indexLift_eq_of_mul_add_eq
       hsource (by omega) hxz
   have hliftMiddle : indexLift sourceWidth middleWidth x = y :=
     indexLift_eq_of_mul_add_eq
       hsource hjlt hy
-
   have hcomposite : indexLift middleWidth targetWidth y = z := by
     have h := hexact x
     rw [insertionComposite, hliftMiddle, hliftTarget] at h
     exact h
-
   have houter : targetWidth * y ≤ middleWidth * z := by
     have hspec :=
       indexLift_spec
@@ -177,7 +175,6 @@ theorem mem_twoGeneratorSemigroup_of_globallyExactInsertion_of_coprime
         (x := y) hmiddle
     rw [hcomposite] at hspec
     exact hspec
-
   have hscaled := Nat.mul_le_mul_left sourceWidth houter
   have hcomparison :
       targetWidth * (middleWidth * x + j) ≤
@@ -191,7 +188,6 @@ theorem mem_twoGeneratorSemigroup_of_globallyExactInsertion_of_coprime
       _ = middleWidth * (targetWidth * x + 1) := by
         rw [hxz]
         ring
-
   have htargetj : targetWidth * j ≤ middleWidth := by
     have hnormalized :
         targetWidth * j + targetWidth * middleWidth * x ≤
@@ -199,7 +195,6 @@ theorem mem_twoGeneratorSemigroup_of_globallyExactInsertion_of_coprime
       simpa [Nat.mul_add, Nat.add_mul, Nat.mul_assoc,
         Nat.mul_comm, Nat.mul_left_comm] using hcomparison
     exact Nat.le_of_add_le_add_right hnormalized
-
   have hdifference :
       sourceWidth ∣ middleWidth - targetWidth * j :=
     (Nat.modEq_iff_dvd' htargetj).1 hjmodeq
