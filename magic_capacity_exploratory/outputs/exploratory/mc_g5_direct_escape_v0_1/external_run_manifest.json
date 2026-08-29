@@ -1,0 +1,28 @@
+{
+  "run_id": "mc_g5_direct_dominance_escape_v0_1",
+  "evidence_class": "exploratory_measured_cpu_generated_sparse_kernel",
+  "seed": 20260829,
+  "branch": "research/magic-capacity-g5-direct-escape-v0.1-20260829",
+  "parent_commit": "848684c433e0bbc5966280d25f66d912966706a8",
+  "package_filename": "MagicCapacity_G5_Direct_Dominance_Escape_v0_1.zip",
+  "package_sha256": "a10c5680e9e9ac66b78196ff37c05cb353a35e4580c9b8fc034fdc425c1d0e1a",
+  "package_size_bytes": 61099,
+  "candidate_count": 101,
+  "low_rank_static_rows": 576,
+  "control_rows": 18,
+  "dynamic_rows": 40,
+  "verdict": "DIRECT_DOMINANCE_ESCAPE_PASS_CONDITIONAL",
+  "exact_semantics": "all tested gauge arms passed int64 endpoint checks",
+  "authoritative_cold_output": "low_rank_paired_cold_followup_summary.csv",
+  "authoritative_large_batch_output": "low_rank_large_batch_serial_followup_summary.csv",
+  "negative_control": "block_local_control_rows.csv",
+  "raw_outputs_committed": false,
+  "raw_outputs_in_external_package": true,
+  "scope_exclusions": [
+    "not GPU evidence",
+    "not cross-machine replication",
+    "not hardware-counter DRAM measurement",
+    "not a production compiler implementation",
+    "not a novelty determination"
+  ]
+}
