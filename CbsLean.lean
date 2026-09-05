@@ -5,3 +5,4 @@ import CbsLean.CbMaximality
 import CbsLean.CbLabels
 import CbsLean.CbCost
 import CbsLean.CbStrict
+import CbsLean.CbRigidity
