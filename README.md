@@ -22,6 +22,7 @@ This repository is archived at
 | `CbsLean/CbMaximality.lean` | cb maximality theorem (W1): room multisets of a width vector as a branching process (`rooms`, `Phi`, `chainMap`), effective width `kappa`, the predicates `Wpred`/`Lam`/`Ppred`, Lemmas A–D, **Theorem 5** `ppred_rooms` and **Theorem 6** `cb_maximality` (cumulative dominance: for nondecreasing widths with `k₁ = 1`, `N_K(L) ≤ N_cb(k)(L)` implies `N_K(l) ≤ N_cb(k)(l)` for all `l ≤ L`) |
 | `CbsLean/CbLabels.lean` | Identification of the room multisets with the actual VW label set: `vwRev K` = `digitBox K` filtered by width-normalized monotonicity, `card_heads` (`⌊(k-c)k'/k⌋` rooms), `roomMS_cons` (branching recursion on labels), `shell_eq_card` (`shell w l` is the number of VW labels of length `l + 2`) |
 | `CbsLean/CbCost.lean` | Breadth-first cost: layer-cake `bfCost`, its monotonicity under cumulative dominance, the level/remainder formula of the baseline paper's Theorem 2, `coffeeBeanMinCost_eq_bfCost` (agrees with `Rigidity.lean`), `bfCost_eq_sum_lengths`, and the cost form of Theorem 6 `minCost_cb_le` |
+| `CbsLean/CbStrict.lean` | Strictness of cb maximality: strict forms of Claim K and Claim S (`claimK_strict`, `claimS_strict`) and `cb_maximality_strict` — under the hypothesis of `cb_maximality`, if the second width is smaller than `k` the cumulative inequality is strict at every intermediate level |
 
 All results compile with **zero `sorry`** and no additional axioms.
 
@@ -33,7 +34,7 @@ Requires [elan](https://github.com/leanprover/elan); the toolchain is pinned in 
 lake build
 ```
 
-Last verified full build: 2026-09-04 (8033 jobs, success; linter warnings only).
+Last verified full build: 2026-09-05 (8034 jobs, success; linter warnings only).
 
 ## Relation to the papers
 
@@ -57,7 +58,7 @@ finite-n optimality claim of Theorem 2.
 
 ## cb maximality (W1 note, 2026-09-04)
 
-`CbMaximality.lean`, `CbLabels.lean` and `CbCost.lean` formalize the theorem of the W1 proof note
+`CbMaximality.lean`, `CbLabels.lean`, `CbCost.lean` and `CbStrict.lean` formalize the theorem of the W1 proof note
 (`W1_Proof_Note_v0_1.md`, companion to the VW-CBS paper): among width-normalized label systems with
 nondecreasing widths and a single root (`k₁ = 1`), the coffee-bean system `cb(k) = VW(1, k, …, k)`
 has the largest cumulative shell counts, hence the smallest breadth-first cost, at every level up to
@@ -74,6 +75,7 @@ any level where its cumulative count dominates.
 | Theorem 6 (cumulative dominance) | `cb_maximality` |
 | `shell w l` = number of VW labels of length `l + 2` | `shell_eq_card` |
 | Theorem 6, cost form | `minCost_cb_le` |
+| Strict Claim K / Claim S, strictness at intermediate levels | `claimK_strict`, `claimS_strict`, `cb_maximality_strict` |
 
-All three files build with zero `sorry`; `#print axioms` on `cb_maximality`, `shell_eq_card` and
-`minCost_cb_le` reports only `propext`, `Classical.choice`, `Quot.sound`.
+All four files build with zero `sorry`; `#print axioms` on `cb_maximality`, `shell_eq_card`,
+`minCost_cb_le` and `cb_maximality_strict` reports only `propext`, `Classical.choice`, `Quot.sound`.
