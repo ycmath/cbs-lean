@@ -9,15 +9,24 @@ Companion Lean 4 development for the CBS paper series:
 - *VW-CBS* (preprint:
   [doi:10.5281/zenodo.22074703](https://doi.org/10.5281/zenodo.22074703))
 
-This repository is archived at
+The software version series is archived at
 [doi:10.5281/zenodo.22070763](https://doi.org/10.5281/zenodo.22070763).
+As checked on 2026-09-11, its latest archived release is
+[v1.0.0](https://doi.org/10.5281/zenodo.22070764), which contains the baseline
+and VW numerator modules, but not the later `Cb*` maximality modules below.
+Until a new archive is published, cite commit
+`f9cdca894844b19560b4f4558c9687685cb4e688` for that later formalization.
+The memory and VW links above are concept DOIs for their version series;
+the inspected paper versions are respectively
+[22075228](https://doi.org/10.5281/zenodo.22075228) and
+[22074704](https://doi.org/10.5281/zenodo.22074704).
 
 ## Contents
 
 | File | Scope |
 |---|---|
 | `CbsLean/Basic.lean` | Template stub only (`def hello := "world"`); no CBS content |
-| `CbsLean/Rigidity.lean` | All CBS baseline-paper content: shell counts and cumulative counts (`coffeeBeanShell`, `coffeeBeanCumulative`, `coffeeBeanCumulative_closedForm`), level-window inversion bounds (`coffeeBeanLevelWindow_realRootBounds`), equal-cost / weighted-gap rigidity in the monotone class, main-term–remainder sandwich (`coffeeBeanMinCost_normalized_squeeze`), and the final asymptotic equivalent (`coffeeBeanMinCost_isEquivalent`) |
+| `CbsLean/Rigidity.lean` | Baseline counting and asymptotic results: shell counts and cumulative counts (`coffeeBeanShell`, `coffeeBeanCumulative`, `coffeeBeanCumulative_closedForm`), level-window inversion bounds (`coffeeBeanLevelWindow_realRootBounds`), equal-cost / weighted-gap rigidity in the monotone class, main-term–remainder sandwich (`coffeeBeanMinCost_normalized_squeeze`), and the final asymptotic equivalent (`coffeeBeanMinCost_isEquivalent`) |
 | `CbsLean/VWNumerator.lean` | VW-CBS numerator theory: mixed-radix digit box (`digitBox`), the division-free ceiling recurrence (`ceilScaled`, `mixedRadixStep`, `mixedRadixAux`), and weighted digit sums — supports the VW-CBS paper, not the baseline paper |
 | `CbsLean/CbMaximality.lean` | cb maximality theorem (W1): room multisets of a width vector as a branching process (`rooms`, `Phi`, `chainMap`), effective width `kappa`, the predicates `Wpred`/`Lam`/`Ppred`, Lemmas A–D, **Theorem 5** `ppred_rooms` and **Theorem 6** `cb_maximality` (cumulative dominance: for nondecreasing widths with `k₁ = 1`, `N_K(L) ≤ N_cb(k)(L)` implies `N_K(l) ≤ N_cb(k)(l)` for all `l ≤ L`) |
 | `CbsLean/CbLabels.lean` | Identification of the room multisets with the actual VW label set: `vwRev K` = `digitBox K` filtered by width-normalized monotonicity, `card_heads` (`⌊(k-c)k'/k⌋` rooms), `roomMS_cons` (branching recursion on labels), `shell_eq_card` (`shell w l` is the number of VW labels of length `l + 2`) |
@@ -36,7 +45,7 @@ Requires [elan](https://github.com/leanprover/elan); the toolchain is pinned in 
 lake build
 ```
 
-Last verified full build: 2026-09-08 (8036 jobs, success; linter warnings only).
+Last verified full build: 2026-09-13 (8036 jobs, success; linter warnings only).
 
 ## Relation to the papers
 
@@ -54,9 +63,23 @@ asymptotic equivalent) is formalized here, as the four theorems
 all in `CbsLean/Rigidity.lean`. The papers cite this repository as the
 "companion Lean 4 development".
 
-Scope note: the formalization covers the asymptotic analysis of the
-closed-form cost (the Theorem 4 chain). It does **not** formalize the
-finite-n optimality claim of Theorem 2.
+Scope note: `Rigidity.lean` contains the Theorem 4 chain described above.
+The later `CbCost.lean` additionally proves the finite-n breadth-first
+level/remainder formula (`bfCost_eq_level_formula`), its equality with the
+sum of the n shortest lengths (`bfCost_eq_sum_lengths`), and the connection
+to `coffeeBeanMinCost`. This does not assert a formalization of every
+statement of Theorem 2: the classification and counting of all optimal
+label subsets are not supplied by those cost identities.
+
+## Continuous integration
+
+`Lean Action CI / build` checks the pinned Lean project on pushes, pull
+requests, and manual runs. A separate `documentation` job generates API
+docs on pushes to `master` and retains them as a downloadable Actions
+artifact. Neither job deploys a website; GitHub Pages is not required.
+Documentation generation uses a fixed docgen-action revision supporting
+`deploy: false`. A future Pages deployment should be configured separately
+and restricted to the default branch.
 
 ## cb maximality (W1 note, 2026-09-04)
 
