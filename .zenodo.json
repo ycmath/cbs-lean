@@ -1,0 +1,40 @@
+{
+  "upload_type": "software",
+  "title": "ycmath/cbs-lean: v1.2.0 — nested multichains and the Macaulay-type lower bound",
+  "creators": [
+    {
+      "name": "Yang, Won Chul",
+      "orcid": "0009-0004-6447-2688"
+    }
+  ],
+  "description": "Lean 4 formalization for the coffee-bean (CBS) paper series. Release v1.2.0 adds a Macaulay-type lower bound for multichains in nested sets and its consequences: Macaulay representations and operators (MacaulayOps), counting paths by their endpoint (PathCount), the reverse Macaulay inequality h(D+1) ≥ h(D)^⟨D⟩ for nested multichains with its equality case and room bound (NestedChains), the Kruskal–Katona analogue for strict chains (NestedChainsStrict), the sharper complement bound Φ_D (NestedChainsComplement) and its form for chains with any prescribed pattern of strict and weak relations (NestedChainsWords), the lecture-hall form for closed and half-open lattice-point counts (LectureHallMacaulay), and reverse Macaulay growth of coffee-bean label counts with a second proof of coffee-bean maximality and a single-crossing theorem (CbMacaulay). Earlier modules are unchanged. Pinned toolchain: Lean 4.28.0 with Mathlib v4.28.0; zero sorry; #print axioms reports only propext, Classical.choice, Quot.sound.",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "Lean 4",
+    "formal verification",
+    "Macaulay's theorem",
+    "Kruskal–Katona theorem",
+    "lecture hall polytopes",
+    "coffee bean systems",
+    "combinatorics"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23373846",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.22740806",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/ycmath/cbs-lean/tree/v1.2.0",
+      "relation": "isIdenticalTo",
+      "scheme": "url"
+    }
+  ]
+}

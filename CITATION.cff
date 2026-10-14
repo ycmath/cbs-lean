@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "cbs-lean: Lean 4 formalization for the coffee bean problem"
+authors:
+  - family-names: Yang
+    given-names: Won Chul
+    orcid: "https://orcid.org/0009-0004-6447-2688"
+version: 1.2.0
+date-released: 2026-10-15
+doi: 10.5281/zenodo.22070763
+repository-code: "https://github.com/ycmath/cbs-lean"
+license: CC-BY-4.0
