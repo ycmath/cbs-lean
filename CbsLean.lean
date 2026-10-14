@@ -7,3 +7,11 @@ import CbsLean.CbCost
 import CbsLean.CbStrict
 import CbsLean.CbRigidity
 import CbsLean.CbTailInduction
+import CbsLean.MacaulayOps
+import CbsLean.PathCount
+import CbsLean.NestedChains
+import CbsLean.NestedChainsStrict
+import CbsLean.NestedChainsComplement
+import CbsLean.NestedChainsWords
+import CbsLean.LectureHallMacaulay
+import CbsLean.CbMacaulay
